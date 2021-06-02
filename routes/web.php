@@ -25,6 +25,13 @@ Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::put('/profile', 'ProfileController@update')->name('profile.update');
 
 Route::get('/listmenu', 'MakananController@index')->name('listmenu');
+Route::get('/listmenu/tambah', 'MakananController@tambah')->name('listTambah');
+Route::post('listmenu/store', 'MakananController@store')->name('listStore');
+Route::get('/listmenu/edit/{id}', 'MakananController@edit')->name('listEdit');
+Route::post('listmenu/update', 'MakananController@update')->name('listUpdate');
+Route::get('/listmenu/hapus/{id}', 'MakananController@delete')->name('listDelete');
+
+Route::get('/transaksi', 'TransaksiController@index')->name('transaksi');
 
 Route::get('/about', function () {
     return view('about');

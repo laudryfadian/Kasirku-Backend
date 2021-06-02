@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -31,6 +32,8 @@ class HomeController extends Controller
             //...
         ];
 
-        return view('home', compact('widget'));
+        $jumlahmakan = DB::table('makanans')->count();
+
+        return view('home', compact('widget', 'jumlahmakan'));
     }
 }

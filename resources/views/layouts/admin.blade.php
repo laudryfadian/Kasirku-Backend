@@ -78,6 +78,13 @@
             </a>
         </li>
 
+        <li class="nav-item {{ Nav::isRoute('transaksi') }}">
+            <a class="nav-link" href="{{ route('transaksi') }}">
+                <i class="fas fa-fw fa-hands-helping"></i>
+                <span>{{ __('Transaksi') }}</span>
+            </a>
+        </li>
+
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
@@ -293,7 +300,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Alejandro RH 2020</span>
+                    <span>Copyright &copy; Laudry Borneo</span>
                 </div>
             </div>
         </footer>
