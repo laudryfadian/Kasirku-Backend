@@ -1,22 +1,31 @@
 @extends('layouts.admin')
 
 @section('main-content')
+
 <h3>Data Menu</h3>
- 
-	<a href="/listmenu"> Kembali</a>
-	
-	<br/>
-	<br/>
- 
-	@foreach($makanan as $p)
-	<form action="/listmenu/update" method="post">
-		{{ csrf_field() }}
-		<input type="hidden" name="id" value="{{ $p->id }}"> <br/>
-		Nama <input type="text" required="required" name="nama_makanan" value="{{ $p->nama_makanan }}"> <br/>
-		Harga <input type="number" required="required" name="harga" value="{{ $p->harga }}"> <br/>
-		Gambar <input type="text" required="required" name="gambar" value="{{ $p->gambar }}"> <br/>
-		<input type="submit" value="Simpan Data">
-	</form>
-	@endforeach
+<br>
+<a href="/listmenu" class="btn btn-sm btn-primary pull-right" style="margin-top: -8px">Kembali</a>
+@foreach($makanan as $p)
+<form action="/listmenu/update" method="post">
+    {{ csrf_field() }}
+    <div class="form-group">
+        <input type="hidden" style="width: 30%" class="form-control" id="id" name="id" value="{{ $p->id }}">
+    </div>
+    <div class="form-group mt-2">
+        <label for="exampleFormControlInput1">Nama</label>
+        <input type="text" style="width: 30%" class="form-control" id="nama_makanan" name="nama_makanan"
+            value="{{ $p->nama_makanan }}">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Harga</label>
+        <input type="number" style="width: 30%" class="form-control" id="harga" name="harga" value="{{ $p->harga }}">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlFile1">Gambar</label>
+        <input type="file" class="form-control-file" id="gambar" name="gambar" value="{{ $p->gambar }}">
+    </div>
+    <button type="submit" class="btn btn-primary" value="Simpan Data">Simpan</button>
+</form>
+@endforeach
 
 @endsection
